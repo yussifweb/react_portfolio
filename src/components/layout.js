@@ -118,22 +118,23 @@ const container = window !== undefined ? () => window().document.body : undefine
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer container={container} variant="temporary" anchor={theme.direction === 'rtl' ? 'right' : 'left'}
-            open={mobileOpen} onClose={handleDrawerToggle} classes={{ paper: classes.drawerPaper, }}
-            ModalProps={{ keepMounted: true, }} >{drawer}</Drawer>
+            open={mobileOpen} onClick={handleDrawerToggle} classes={{ paper: classes.drawerPaper, }}
+            ModalProps={{ keepMounted: false, }} >{drawer}</Drawer>
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer classes={{ paper: classes.drawerPaper, }} variant="permanent" open >{drawer}</Drawer>
         </Hidden>
       </nav>
 
-      <main className={classes.content}>
       <Switch>
+      <main className={classes.content}>      
       <Route path="/" exact component={Home} />
       <Route path="/skills" exact component={Skills} />
       <Route path="/interests" exact component={Interests} />
-      <Route path="/portfolio" exact component={Portfolio} />
-      </Switch> 
-      </main>            
+      <Route path="/portfolio" exact component={Portfolio} /> 
+      </main>
+      </Switch>
+                
     </div>
     </Router>
     </>
