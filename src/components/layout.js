@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItemIcon, ListItem, ListItemText, Toolbar, Container } from '@material-ui/core';
+import { Avatar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItemIcon, ListItem, ListItemText, Toolbar, Container, Slide } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
 
@@ -117,9 +117,12 @@ const container = window !== undefined ? () => window().document.body : undefine
       <nav className={classes.drawer} aria-label="menu">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
-          <Drawer container={container} variant="temporary" anchor={theme.direction === 'rtl' ? 'right' : 'left'}
+          
+          <Drawer container={container} variant="temporary" anchor={theme.direction === 'btt' ? 'bottom' : 'top'}
             open={mobileOpen} onClick={handleDrawerToggle} classes={{ paper: classes.drawerPaper, }}
-            ModalProps={{ keepMounted: false, }} >{drawer}</Drawer>
+            ModalProps={{ keepMounted: false, }} >
+              <Slide in="true" direction="down" timeout={900}>{drawer}</Slide></Drawer>
+          
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer classes={{ paper: classes.drawerPaper, }} variant="permanent" open >{drawer}</Drawer>
