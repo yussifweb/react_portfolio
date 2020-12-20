@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Grid, Typography, Container, Tooltip, IconButton, Avatar } from '@material-ui/core';
+import { Divider, Grid, Typography, Container, Tooltip, IconButton, Avatar, Slide, Grow, Fade, Zoom } from '@material-ui/core';
 import image from '../assets/images/hero.png'
 import { online } from '../data/onlineData'
 import '../layout.css'
@@ -90,31 +90,45 @@ const Home = () => {
         <Grid item xs={12} sm={7}>
 
         <Grid item xs={12} sm={12} className={classes.grid}>
+          <Slide in="true" direction="left" timeout={500}>
           <Typography variant="h2" className={classes.paperNm}>Yussif <span style={{ color: `#585656` }}>Issah</span></Typography>
+          </Slide>
+          <Slide in="true" direction="right" timeout={1000}>
           <Typography variant="subtitle1" className={classes.paperWk}>Frontend Developer, <span style={{ color: `#0777b8` }}>DevCareers</span></Typography>
+          </Slide>
         </Grid>
 
         <Divider />
 
         <Grid item xs={12} sm={12} style={{ marginTop: `1rem` }}>
+          <Slide element in="true" direction="up" timeout={1000}>
           <Typography className={classes.paper}>I am a self motivated, result oriented, respectful and responsible 
-            gentleman. I derive most of my motivation from myself and f
-            ew from other people because I am the hero of my own story.
-            I love to use my free period to play music or watch movies. 
+            gentleman. I derive most of my motivation from myself and few
+             from other people because I am the hero of my own story.</Typography>
+            </Slide>
+            <Zoom element in="true" timeout={1300}>
+              <Typography className={classes.paper}>I love to use my free period to play music or watch movies. 
             I do love to be alone with my thoughts but that doesn't mean 
             I'm an introvert, NOPE I'm actually a friendly guy and really like 
-            hanging out with my friends. I love to socialize and everyone is welcome
+            hanging out with my friends.</Typography>
+            </Zoom>
+
+            <Slide element in="true" direction="down" timeout={1600}>
+              <Typography className={classes.paper}>I love to socialize and everyone is welcome
              to my inbox for bussiness purposes or chit chat. Thanks for your time and enjoy 
             your amazing tour on this site.</Typography>
+            </Slide>
+
         </Grid>
 
         <Grid item xs={12} sm={12} style={{ marginTop: `5rem` }} className={classes.paper}>
-          {online.map((on, index) => (
-            <Tooltip key={index} title={on.title} className={classes.tooltip}>
+          {online.map((on, index) => (                      
+            <Tooltip key={index} title={on.title} className={classes.tooltip}> 
             <IconButton href={on.url} target="_blank" aria-label={on.label}>
                 {on.icon}
             </IconButton>
             </Tooltip>
+            
           ))}
         </Grid>
         </Grid>
