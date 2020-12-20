@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles';
-import { Divider, Grid, Typography, Container, Tooltip, IconButton, Avatar, Slide, Grow, Fade, Zoom } from '@material-ui/core';
+import { Divider, Grid, Typography, Container, Tooltip, IconButton, Avatar, Slide, Zoom } from '@material-ui/core';
 import image from '../assets/images/hero.png'
 import { online } from '../data/onlineData'
 import '../layout.css'
