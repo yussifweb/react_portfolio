@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Avatar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItemIcon, ListItem, ListItemText, Toolbar, Container, Slide } from '@material-ui/core';
+import { Avatar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItemIcon, ListItem, ListItemText, Toolbar, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import {BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
 
@@ -120,8 +120,7 @@ const container = window !== undefined ? () => window().document.body : undefine
           
           <Drawer container={container} variant="temporary" anchor={theme.direction === 'btt' ? 'bottom' : 'top'}
             open={mobileOpen} onClick={handleDrawerToggle} classes={{ paper: classes.drawerPaper, }}
-            ModalProps={{ keepMounted: false, }} >
-              <Slide in="true" direction="down" timeout={900}>{drawer}</Slide></Drawer>
+            ModalProps={{ keepMounted: false, }} >{drawer}</Drawer>
           
         </Hidden>
         <Hidden xsDown implementation="css">
