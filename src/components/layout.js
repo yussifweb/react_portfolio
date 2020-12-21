@@ -10,6 +10,7 @@ import Home from '../pages';
 import Skills from '../pages/skills';
 import Interests from '../pages/interests';
 import Portfolio from '../pages/portfolio';
+import { Helmet } from 'react-helmet';
 
 const drawerWidth = 300;
 
@@ -96,7 +97,7 @@ const Layout = (props) => {
       <footer style={{ marginTop: `1rem`, textAlign: 'center' }}>
           © {new Date().getFullYear()} Made with <span style={{color:'#ff0000', fontSize: `1.2rem`}}>&#9829;</span> by
           {` `}
-          <a href="https://twitter.com/yussifweb" target="_blank" rel="noreferrer">Yussifweb</a>
+          <a className={classes.link} href="https://twitter.com/yussifweb" target="_blank" rel="noreferrer">Yussifweb</a>
         </footer>
     </div>
 
@@ -105,6 +106,10 @@ const Layout = (props) => {
 const container = window !== undefined ? () => window().document.body : undefined;
     return (
       <>
+      <Helmet>
+        <title>Yussifweb</title>
+        <meta name="Yussifweb" content="Yusif Issah, NetKid Gh, Awaga, Yussifweb" />
+      </Helmet>
       <Router>
         <Toolbar className={classes.appBar}>
           <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
@@ -116,12 +121,10 @@ const container = window !== undefined ? () => window().document.body : undefine
       <CssBaseline />         
       <nav className={classes.drawer} aria-label="menu">
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="css">
-          
+        <Hidden smUp implementation="css">          
           <Drawer container={container} variant="temporary" anchor={theme.direction === 'btt' ? 'bottom' : 'top'}
             open={mobileOpen} onClick={handleDrawerToggle} classes={{ paper: classes.drawerPaper, }}
-            ModalProps={{ keepMounted: false, }} >{drawer}</Drawer>
-          
+            ModalProps={{ keepMounted: false, }} >{drawer}</Drawer>          
         </Hidden>
         <Hidden xsDown implementation="css">
           <Drawer classes={{ paper: classes.drawerPaper, }} variant="permanent" open >{drawer}</Drawer>
