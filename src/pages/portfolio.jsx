@@ -1,8 +1,10 @@
 import React from 'react'
+import ReactPlayer from 'react-player'
 import { Helmet } from 'react-helmet'
-import { Grid, Tooltip } from '@material-ui/core';
+import { Grid, Slide, Tooltip, Typography, Divider } from '@material-ui/core';
 import { images, webs, videos } from '../data/portfolio'
 import { makeStyles } from '@material-ui/core/styles';
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -12,46 +14,9 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     padding: theme.spacing(1),
   },
-    paperNm: {
-    // fontFamily: font,
-    textTransform: 'uppercase',
-    fontWeight: `700`,
-    fontSize: `6rem`,
-    color: `#0777b8`,
-
-    [theme.breakpoints.down('sm')]: {
-      fontSize: `4rem`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      fontSize: `3.5rem`,
-    },
-
-  },
-    paperWk: {
-    // fontFamily: font,
-    textTransform: 'uppercase',
-    fontSize: `2.5rem`,
-    color: `#585656`,
-    marginTop: `-2rem`,
-    paddingLeft: `1rem`,
-
-    [theme.breakpoints.down('md')]: {
-      paddingLeft: `0.5rem`,
-      marginTop: `-0.5rem`,
-      fontSize: `1rem`,
-    },
-    [theme.breakpoints.down('sm')]: {
-      paddingLeft: `0.5rem`,
-      marginTop: `-0.5rem`,
-      fontSize: `1rem`,
-    },
-    [theme.breakpoints.down('xs')]: {
-      paddingLeft: `0.5rem`,
-      marginTop: `-1rem`,
-      fontSize: `1.3rem`,
-    },
-  },
+    
   grid: {
+      marginTop: `0.5rem`,
       marginBottom: `1rem`,
   },
   img: {
@@ -59,18 +24,12 @@ const useStyles = makeStyles((theme) => ({
       height: `100%`,
       borderRadius: `20px`,      
   },
-  tooltip: {
-    height: `3.5rem`,
-    width: `3.5rem`,
-    backgroundColor: `#343a40`,
-    color: `#fff`,
-    margin: `0.5rem 1rem 0.5rem 0`,
-
-    '&:hover': {
-      backgroundColor: `#ff006a`,
-      color: `#6bfff0`,
-    },    
+    heading: {
+    fontSize: `clamp(1.3rem, 6vw, 2.5rem)`,
+    fontWeight: `500`,
+    color: `#4d4c4c`,
   },
+
 }));
 
 const Portfolio = () => {
@@ -84,7 +43,13 @@ const Portfolio = () => {
       </Helmet>
 
       <Grid container spacing={2}>
-        <Grid container spacing={2}>
+
+          <Slide in="true" direction="down" timeout={500}>
+          <Typography className={classes.heading}>GRAPHIC DESIGN</Typography>
+          </Slide>
+          <Divider />
+
+        <Grid container spacing={2} className={classes.grid} style={{ marginBottom: `4rem` }}>
         {images.map((image, index) => (
           <Grid item xs={12} sm={3} className={classes.grid} key={index}>
           <Tooltip title={image.alt} enterDelay={500} leaveDelay={200}>       
@@ -94,15 +59,28 @@ const Portfolio = () => {
         ))}
       </Grid>
 
-        <Grid container spacing={2}>
-        {videos.map((index, video) => (
-          <Grid item xs={12} sm={6} className={classes.grid} key={index}>
 
+        <Slide in="true" direction="down" timeout={500}>
+          <Typography className={classes.heading}>VIDEOS SHOT/EDITED</Typography>
+        </Slide>
+        <Divider />
+
+        <Grid container spacing={4} className={classes.grid} style={{ marginBottom: `4rem` }}>
+        {videos.map((video, index) => (
+          <Grid item xs={12} sm={6} spacing={2} key={index}>
+          <Tooltip title={video.alt} enterDelay={500} leaveDelay={200}>
+          <ReactPlayer width="100%" url={video.link} />
+          </Tooltip>
           </Grid>
         ))}
       </Grid>
 
-      <Grid container spacing={2}>
+        <Slide in="true" direction="down" timeout={500}>
+        <Typography className={classes.heading}>WEBSITES</Typography>
+        </Slide>
+        <Divider />
+
+      <Grid container spacing={2} className={classes.grid}>
         {webs.map((web, index) => (
           <Grid item xs={12} sm={6} className={classes.grid} key={index}>
           <Tooltip title={web.alt} enterDelay={500} leaveDelay={200}>
@@ -113,10 +91,8 @@ const Portfolio = () => {
         ))}
       </Grid>
 
-
-      </Grid>
-            
-        </>
+      </Grid>            
+      </>
     )
 }
 
