@@ -4,7 +4,7 @@ export const images = [
     {src: "images/byfball.jpg", alt: "Bekwai Youth Football Academy"},
     {src: "images/mmm.jpg", alt: "Metro Morning Mix"},
     {src: "images/kuul.jpg", alt: "Kull Fm Morning Show"},
-    {src: "images/pempa.png", alt: "Peace Mobile Preachers Association"},
+    {src: "images/pempa.jpg", alt: "Peace Mobile Preachers Association"},
     {src: "images/star.jpg", alt: "Starr Luvv"},
     {src: "images/tdrive.jpg", alt: "Testimony Drive"},
 ];
@@ -17,6 +17,6 @@ export const videos = [
 ];
 
 export const webs = [
-    {src: "images/cuultunez.png", alt: "CuulTunezGh", link: "https://cuultunezgh.wordpress.com/"},
-    {src: "images/jobcentergh.png", alt: "Jobcentregh", link: "http://jobcentregh.com/"},
+    {src: "images/cuultunez.jpg", alt: "CuulTunezGh", link: "https://cuultunezgh.wordpress.com/"},
+    {src: "images/jobcentergh.jpg", alt: "Jobcentregh", link: "http://jobcentregh.com/"},
 ];
