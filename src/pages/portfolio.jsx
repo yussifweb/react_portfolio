@@ -1,6 +1,6 @@
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import { Divider, Grid, Typography, Container, Tooltip, IconButton, Avatar, Slide, Zoom, Grow } from '@material-ui/core';
+import { Grid, Tooltip } from '@material-ui/core';
 import { images, webs, videos } from '../data/portfolio'
 import { makeStyles } from '@material-ui/core/styles';
 
