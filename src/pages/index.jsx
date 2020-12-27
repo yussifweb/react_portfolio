@@ -88,7 +88,7 @@ const Home = () => {
         
       <Grid container spacing={2}>
 
-        <Grid item xs={12} sm={7}>
+        <Grid item xs={12} sm={12} md={7}>
 
         <Grid item xs={12} sm={12} className={classes.grid}>
           <Slide in="true" direction="left" timeout={500}>
@@ -135,7 +135,7 @@ const Home = () => {
         </Grid>
         </Grid>
 
-        <Grid item xs={12} sm={5}>
+        <Grid item xs={12} sm={12} md={5}>
           <Container maxWidth="sm">
             <Slide in="true" direction="down" timeout={1600}>      
             <Avatar className={classes.img} alt="Yussif Issah" src={image} />

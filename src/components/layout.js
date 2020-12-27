@@ -97,7 +97,7 @@ const Layout = (props) => {
       <footer style={{ marginTop: `1rem`, textAlign: 'center' }}>
           © {new Date().getFullYear()} Made with <span style={{color:'#ff0000', fontSize: `1.2rem`}}>&#9829;</span> by
           {` `}
-          <a className={classes.link} href="https://twitter.com/yussifweb" target="_blank" rel="noreferrer">Yussifweb</a>
+          <a className={classes.link} href="https://twitter.com/yussifweb" target="_blank" rel="noopener noreferrer">Yussifweb</a>
         </footer>
     </div>
 

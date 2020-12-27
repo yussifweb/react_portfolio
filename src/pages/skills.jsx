@@ -61,7 +61,7 @@ const Skills = () => {
       <Grid container spacing={2}>
 
         <Grid item xs={12} sm={12} className={classes.paper} gutterBottom>
-          <Typography className={classes.heading} >PROGRAMMING LANGUAGES & TOOLS</Typography>
+          <Typography className={classes.heading}>PROGRAMMING LANGUAGES & TOOLS</Typography>
           <Divider />
           
           {tools.map((tool, index) => (
@@ -73,7 +73,7 @@ const Skills = () => {
           ))}
         </Grid>
 
-        <Grid item xs={12} sm={8}>
+        <Grid item xs={12} sm={12} md={8}>
           <Typography className={classes.heading}>RELEVANT SKILLS</Typography> 
            <Divider />         
               <List>
