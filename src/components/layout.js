@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { Avatar, CssBaseline, Divider, Drawer, Hidden, IconButton, List, ListItemIcon, ListItem, ListItemText, Toolbar, Container } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
-import {BrowserRouter as Router, Switch, Route, NavLink} from 'react-router-dom';
+import {BrowserRouter as Router, Switch as Pages, Route, NavLink} from 'react-router-dom';
+import WbSunnyIcon from '@material-ui/icons/WbSunny';
+import NightsStayIcon from '@material-ui/icons/NightsStay';
 
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
 import dp from '../assets/images/ice.png'
 import {menuData} from '../data/MenuData'
 import Home from '../pages';
@@ -78,8 +80,34 @@ const Layout = (props) => {
     setMobileOpen(!mobileOpen);
   };
 
+  const [darkState, setDarkState] = useState(false);
+  const palletType = darkState ? "dark" : "light";
+  const mainPrimaryColor = darkState ? '#8d8e8f' : '#4d4c4c';
+  const mainSecondaryColor = darkState ? '#a3a3a3' : '#585656';
+  const iconType = darkState ? <NightsStayIcon /> : <WbSunnyIcon />;
+
+  const darkTheme = createMuiTheme({
+    palette: {
+      type: palletType,
+      primary: {
+        main: mainPrimaryColor
+      },
+      secondary: {
+        main: mainSecondaryColor
+      }
+    }
+  });
+
+  const handleThemeChange = () => {
+    setDarkState(!darkState);
+  };
+  
+
   const drawer = (
+    
     <div style={{ marginTop: `1rem` }}>
+      <IconButton value="check"  onClick={handleThemeChange}>{iconType}</IconButton>
+
       <Container maxWidth="sm" style={{ margin: `4rem 0 3rem 0` }}>
         <Avatar variant="rounded" alt="Yussif Issah" src={dp} className={classes.img}/>
       </Container>
@@ -106,10 +134,14 @@ const Layout = (props) => {
 const container = window !== undefined ? () => window().document.body : undefined;
     return (
       <>
+      <ThemeProvider theme={darkTheme}>
+      <CssBaseline />
       <Helmet>
         <title>Yussifweb</title>
         <meta name="Yussifweb" content="Yusif Issah, NetKid Gh, Awaga, Yussifweb" />
       </Helmet>
+        
+
       <Router>
         <Toolbar className={classes.appBar}>
           <IconButton color="inherit" aria-label="open drawer" edge="start" onClick={handleDrawerToggle} className={classes.menuButton}>
@@ -131,17 +163,18 @@ const container = window !== undefined ? () => window().document.body : undefine
         </Hidden>
       </nav>
 
-      <Switch>
-      <main className={classes.content}>      
+      <Pages>
+      <main className={classes.content}>
       <Route path="/" exact component={Home} />
       <Route path="/skills" exact component={Skills} />
       <Route path="/interests" exact component={Interests} />
       <Route path="/portfolio" exact component={Portfolio} /> 
       </main>
-      </Switch>
+      </Pages>
                 
     </div>
     </Router>
+    </ThemeProvider>
     </>
     )
 };

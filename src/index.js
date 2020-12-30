@@ -4,9 +4,18 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// const darkTheme = createMuiTheme({
+//   palette: {
+//     type: "dark",
+//   }
+// });
+
+
+
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App />  
   </React.StrictMode>,
   document.getElementById('root')
 );

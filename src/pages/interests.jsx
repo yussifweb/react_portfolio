@@ -23,7 +23,6 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: `clamp(1.3rem, 6vw, 2.5rem)`,
     fontWeight: `500`,
-    color: `#4d4c4c`,
   },
 }));
 
@@ -39,7 +38,7 @@ const Interests = () => {
         <Grid container spacing={4} className={classes.top}>
            <Grid item xs={12} sm={8} className={classes.grid}>
             <Slide in="true" direction="down" timeout={500}>
-            <Typography className={classes.heading}>INTERESTS</Typography>
+            <Typography className={classes.heading} color="primary">INTERESTS</Typography>
             </Slide>
             <Divider />
             <Slide in="true" direction="left" timeout={800}>

@@ -27,7 +27,6 @@ const useStyles = makeStyles((theme) => ({
     heading: {
     fontSize: `clamp(1.3rem, 6vw, 2.5rem)`,
     fontWeight: `500`,
-    color: `#4d4c4c`,
   },
 
 }));
@@ -44,10 +43,12 @@ const Portfolio = () => {
 
       <Grid container spacing={2}>
 
-          <Slide in="true" direction="down" timeout={500}>
-          <Typography className={classes.heading}>GRAPHIC DESIGN</Typography>
-          </Slide>
-          <Divider />
+      <Grid item xs={12} sm={12}>
+      <Slide in="true" direction="down" timeout={500}>
+      <Typography className={classes.heading} color="primary">GRAPHIC DESIGN</Typography>
+      </Slide>
+      <Divider />
+      </Grid>
 
         <Grid container spacing={2} className={classes.grid} style={{ marginBottom: `4rem` }}>
         {images.map((image, index) => (
@@ -59,11 +60,12 @@ const Portfolio = () => {
         ))}
       </Grid>
 
-
+      <Grid item xs={12} sm={12}>
         <Slide in="true" direction="down" timeout={500}>
-          <Typography className={classes.heading}>VIDEOS SHOT/EDITED</Typography>
+          <Typography className={classes.heading} color="primary">VIDEOS SHOT/EDITED</Typography>
         </Slide>
         <Divider />
+        </Grid>
 
         <Grid container spacing={4} className={classes.grid} style={{ marginBottom: `4rem` }}>
         {videos.map((video, index) => (
@@ -75,10 +77,12 @@ const Portfolio = () => {
         ))}
       </Grid>
 
+        <Grid item xs={12} sm={12}>
         <Slide in="true" direction="down" timeout={500}>
-        <Typography className={classes.heading}>WEBSITES</Typography>
+        <Typography className={classes.heading} color="primary">WEBSITES</Typography>
         </Slide>
         <Divider />
+        </Grid>
 
       <Grid container spacing={2} className={classes.grid}>
         {webs.map((web, index) => (

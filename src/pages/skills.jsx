@@ -26,6 +26,7 @@ const useStyles = makeStyles((theme) => ({
     color: `darkgrey`,
     margin: `0.5rem 1rem 0.5rem 0`,
     fontSize: `3.5rem`,
+    fontWeight: `500`,
 
     '&:hover': {
       backgroundColor: `#464344`,
@@ -44,7 +45,6 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: `clamp(1.3rem, 6vw, 2.5rem)`,
     fontWeight: `500`,
-    color: `#4d4c4c`,
   }
 
 }));
@@ -61,7 +61,7 @@ const Skills = () => {
       <Grid container spacing={2}>
 
         <Grid item xs={12} sm={12} className={classes.paper} gutterBottom>
-          <Typography className={classes.heading}>PROGRAMMING LANGUAGES & TOOLS</Typography>
+          <Typography className={classes.heading} color="primary">PROGRAMMING LANGUAGES & TOOLS</Typography>
           <Divider />
           
           {tools.map((tool, index) => (
@@ -74,7 +74,7 @@ const Skills = () => {
         </Grid>
 
         <Grid item xs={12} sm={12} md={8}>
-          <Typography className={classes.heading}>RELEVANT SKILLS</Typography> 
+          <Typography className={classes.heading} color="primary">RELEVANT SKILLS</Typography> 
            <Divider />         
               <List>
                 {skills.map((skill, index) => (

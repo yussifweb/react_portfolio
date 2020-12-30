@@ -20,7 +20,6 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontWeight: `700`,
     fontSize: `6rem`,
-    color: `#0777b8`,
 
     [theme.breakpoints.down('sm')]: {
       fontSize: `4rem`,
@@ -34,7 +33,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: font,
     textTransform: 'uppercase',
     fontSize: `2.5rem`,
-    color: `#585656`,
     marginTop: `-2rem`,
     paddingLeft: `1rem`,
 
@@ -92,22 +90,22 @@ const Home = () => {
 
         <Grid item xs={12} sm={12} className={classes.grid}>
           <Slide in="true" direction="left" timeout={500}>
-          <Typography variant="h2" className={classes.paperNm}>Yussif <span style={{ color: `#585656` }}>Issah</span></Typography>
+          <Typography variant="h2" className={classes.paperNm} color="secondary"><span style={{ color: `#0777b8` }}>Yussif</span> Issah</Typography>
           </Slide>
           <Slide in="true" direction="right" timeout={1000}>
-          <Typography variant="subtitle1" className={classes.paperWk}>Frontend Developer, <span style={{ color: `#0777b8` }}>DevCareers</span></Typography>
+          <Typography variant="subtitle1" className={classes.paperWk} color="secondary">Frontend Developer, <span style={{ color: `#0777b8` }}>DevCareers</span></Typography>
           </Slide>
         </Grid>
 
         <Divider />
 
         <Grid item xs={12} sm={12} style={{ marginTop: `1rem` }}>
-          <Slide element in="true" direction="up" timeout={1000}>
+          <Slide in="true" direction="up" timeout={1000}>
           <Typography className={classes.paper}>I am a self motivated, result oriented, respectful and responsible 
             gentleman. I derive most of my motivation from myself and few
              from other people because I am the hero of my own story.</Typography>
             </Slide>
-            <Zoom element in="true" timeout={1300}>
+            <Zoom in="true" timeout={1300}>
               <Typography className={classes.paper}>I love to use my free period to play music or watch movies. 
             I do love to be alone with my thoughts but that doesn't mean 
             I'm an introvert, NOPE I'm actually a friendly guy and really like 
