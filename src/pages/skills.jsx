@@ -45,8 +45,19 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: `clamp(1.3rem, 6vw, 2.5rem)`,
     fontWeight: `500`,
-  }
-
+  },
+  // shape: {
+  //   width: `10rem`,
+  //   height: `10rem`,
+  //   border: `3px solid black`,
+  //   borderRadius: `150px`,
+  //   position: 'absolute',
+  //   top: `350px`,
+  //   bottom: `0`,
+  //   right: `150px`,
+  //   opacity: `0.5`,
+  //   zIndex: `10`,
+  // },
 }));
 
 const Skills = () => { 
@@ -88,6 +99,8 @@ const Skills = () => {
             </List>
         </Grid>
         </Grid>
+
+        {/* <div className={classes.shape}></div> */}
         </>
     )
 }

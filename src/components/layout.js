@@ -105,10 +105,9 @@ const Layout = (props) => {
 
   const drawer = (
     
-    <div style={{ marginTop: `1rem` }}>
-      <IconButton value="check"  onClick={handleThemeChange}>{iconType}</IconButton>
-
-      <Container maxWidth="sm" style={{ margin: `4rem 0 3rem 0` }}>
+    <div>
+      <Container maxWidth="sm" style={{ margin: `2rem 0 3rem 0` }}>
+         <IconButton value="check"  onClick={handleThemeChange}>{iconType}</IconButton>
         <Avatar variant="rounded" alt="Yussif Issah" src={dp} className={classes.img}/>
       </Container>
       <Divider />
